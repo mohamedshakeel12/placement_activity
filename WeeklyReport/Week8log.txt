@@ -1,0 +1,8 @@
+Member 1(Mohamed Shakeel A):
+-Implemented additional APIs for fetching student application statuses and company specific job postings.
+Member 2(Sangami G K):
+-Developed business logic for eligibility verification and automated status transitions in job applications.
+Member 3(Rakshaya S):
+-Optimized database queries for handling complex job filtering and company based searches efficiently.
+Member 4(Hariprasath R):
+-Enhanced error handling and validation mechanisms for API requests to ensure secure and reliable data transactions.

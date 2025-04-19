@@ -1,0 +1,8 @@
+Member 1(Mohamed Shakeel A):
+-Conducted unit testing for backend APIs, ensuring correct responses and error handling.
+Member 2(Sangami G K):
+-Performed frontend UI testing, validating component responsiveness and user interactions.
+Member 3(Rakshaya S):
+-Executed database testing, verifying data consistency, retrieval accuracy, and query performance.
+Member 4(Hariprasath R):
+-Conducted integration testing between frontend and backend, identifying and fixing API communication issues.

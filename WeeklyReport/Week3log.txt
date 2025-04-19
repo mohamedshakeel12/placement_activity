@@ -1,0 +1,23 @@
+Member 1 (Mohamed Shakeel):
+
+-Designed wireframes for the dashboard screen.
+-Provided suggestions on user-friendly layouts and navigation.
+-Set up the initial structure of the frontend framework in the repository.
+
+Member 2 (Sangami G K):
+
+-Focused on creating style guides, ensuring consistency in fonts, colors, and button styles.
+-Assisted in finalizing the wireframes for the company portfolio and student profile sections.
+-Reviewed frontend framework setup and suggested folder structure improvements.
+
+Member 3 (RAKSHAYA):
+
+-Designed wireframes for the job postings and placement drive scheduling screens.
+-Ensured the wireframes aligned with the flow of data from the backend.
+-Contributed to defining UI responsiveness across devices (mobile and web).
+
+Member 4 (HARIPRASATH):
+
+-Created wireframes for the interview scheduling and report generation sections.
+-Assisted in integrating the style guides with the wireframes for a consistent UI.
+-Tested the initial frontend framework setup to ensure it was ready for development.

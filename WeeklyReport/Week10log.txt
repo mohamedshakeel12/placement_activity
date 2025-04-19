@@ -1,0 +1,11 @@
+Mohamed Shakeel A: 
+    Conducted complete functional testing of frontend components, ensuring responsiveness and smooth user interactions.
+
+Sangami G K: 
+    Identified and fixed UI/UX inconsistencies, improving the overall user experience and interface performance.
+
+Rakshaya S: 
+    Validated database queries and optimized data retrieval processes to enhance system efficiency.
+
+Hariprasath R: 
+    Performed API testing, debugging backend functionalities, and improving system response times for better performance.

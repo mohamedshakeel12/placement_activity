@@ -1,0 +1,45 @@
+Week 1 Worklog (06.01.2025 - 11.01.2025)
+Work Done:
+
+Planning and Initial Setup:
+-Initial setup of the project repository on GitHub with proper folder structure.
+-Definition of the project's scope and objectives.
+
+Scope and Objectives of the Project:
+
+Scope:
+-Automate the placement activities of the Training and Placement Cell by centralizing company data, job postings, placement drive schedules, student profiles, and interview processes.
+-Develop a web/mobile app for students, placement officers, and recruiters to streamline interactions and ensure smooth operations.
+
+Objectives:
+-Create a centralized database for managing student and company profiles.
+-Automate student selection based on predefined eligibility criteria.
+-Implement real-time notifications for placement drives and interview schedules.
+-Enhance communication between placement officers, students, and recruiters.
+-Ensure secure data management and role-based access control.
+
+Individual Contribution:
+
+Member 1 (Mohamed Shakeel):
+
+-Contributed to defining the scope and objectives of the project.
+-Assisted in setting up the GitHub repository and folder structure.
+-Coordinated with the team to ensure clarity on project goals.
+
+Member 2 (Sangami G K):
+
+-Conducted research on similar placement management systems to outline key features.
+-Assisted in defining the initial project scope and objectives.
+-Helped with Git repository setup and initial commits.
+
+Member 3(Rakshaya):
+
+-Focused on the layout and structure of the initial project plan.
+-Contributed to creating the project objectives based on team discussions.
+-Assisted in setting up the project folder structure on GitHub.
+
+Member 4(Hariprasanth):
+
+-Assisted in the planning and defining the scope of the project.
+-Helped with Git repository setup and initial commit logs.
+-Ensured the structure of the project adhered to future development needs.

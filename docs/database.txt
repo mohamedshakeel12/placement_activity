@@ -1,0 +1,226 @@
+# Database Design Documentation
+
+## 1. Database Schema Overview
+
+The placement dashboard uses MongoDB as its database with the following collections:
+
+### Users Collection
+```javascript
+{
+  _id: ObjectId,
+  email: String,          // Unique, Required
+  password: String,       // Hashed, Required
+  role: String,          // enum: ['student', 'admin', 'mentor']
+  isActive: Boolean,     // Default: true
+  createdAt: Date,       // Auto-generated
+  updatedAt: Date        // Auto-updated
+}
+```
+
+### StudentProfiles Collection
+```javascript
+{
+  _id: ObjectId,
+  userId: ObjectId,      // Reference to Users collection
+  personalInfo: {
+    name: String,
+    dateOfBirth: Date,
+    gender: String,
+    contactNumber: String,
+    address: String
+  },
+  academicInfo: {
+    branch: String,
+    currentYear: Number,
+    cgpa: Number,
+    activeBacklogs: Number,
+    batch: String
+  },
+  skills: [String],
+  certifications: [{
+    name: String,
+    issuer: String,
+    date: Date,
+    credentialUrl: String
+  }],
+  projects: [{
+    title: String,
+    description: String,
+    technologies: [String],
+    url: String
+  }],
+  resumeUrl: String,
+  isPlaced: Boolean,
+  createdAt: Date,
+  updatedAt: Date
+}
+```
+
+### Companies Collection
+```javascript
+{
+  _id: ObjectId,
+  name: String,          // Required
+  description: String,
+  industry: String,
+  website: String,
+  contactInfo: {
+    name: String,
+    email: String,
+    phone: String,
+    designation: String
+  },
+  placementHistory: [{
+    year: Number,
+    studentsHired: Number,
+    averagePackage: Number
+  }],
+  createdAt: Date,
+  updatedAt: Date
+}
+```
+
+### Jobs Collection
+```javascript
+{
+  _id: ObjectId,
+  companyId: ObjectId,   // Reference to Companies collection
+  title: String,         // Required
+  description: String,
+  requirements: [String],
+  eligibilityCriteria: {
+    minimumCgpa: Number,
+    allowedBranches: [String],
+    maximumBacklogs: Number,
+    batch: String
+  },
+  package: {
+    ctc: Number,
+    breakup: String
+  },
+  deadline: Date,
+  status: String,        // enum: ['active', 'closed', 'upcoming']
+  createdAt: Date,
+  updatedAt: Date
+}
+```
+
+### Applications Collection
+```javascript
+{
+  _id: ObjectId,
+  jobId: ObjectId,       // Reference to Jobs collection
+  studentId: ObjectId,   // Reference to StudentProfiles collection
+  status: String,        // enum: ['applied', 'shortlisted', 'interviewed', 'selected', 'rejected']
+  interviewSchedule: {
+    date: Date,
+    time: String,
+    location: String,
+    type: String         // enum: ['online', 'offline']
+  },
+  feedback: String,
+  createdAt: Date,
+  updatedAt: Date
+}
+```
+
+### Notifications Collection
+```javascript
+{
+  _id: ObjectId,
+  type: String,          // enum: ['job', 'interview', 'result', 'announcement']
+  title: String,
+  message: String,
+  recipients: [ObjectId], // Reference to Users collection
+  isRead: [ObjectId],    // Reference to Users collection
+  createdAt: Date,
+  updatedAt: Date
+}
+```
+
+## 2. Relationships
+
+### One-to-One Relationships
+- User → StudentProfile
+- User → AdminProfile
+
+### One-to-Many Relationships
+- Company → Jobs
+- StudentProfile → Applications
+- Job → Applications
+- User → Notifications
+
+### Many-to-Many Relationships
+- Students ↔ Skills
+- Jobs ↔ Students (through Applications)
+- Companies ↔ Students (through Jobs and Applications)
+
+## 3. Indexes
+
+### Primary Indexes
+- All collections have automatic index on _id field
+
+### Secondary Indexes
+```javascript
+// Users Collection
+{ email: 1 }            // Unique index for email
+
+// StudentProfiles Collection
+{ userId: 1 }           // Index for faster user lookup
+{ 'academicInfo.cgpa': 1 } // Index for eligibility queries
+
+// Jobs Collection
+{ companyId: 1 }        // Index for company jobs
+{ status: 1 }           // Index for active jobs
+{ deadline: 1 }         // Index for upcoming deadlines
+
+// Applications Collection
+{ jobId: 1 }            // Index for job applications
+{ studentId: 1 }        // Index for student applications
+{ status: 1 }           // Index for application status
+
+// Notifications Collection
+{ recipients: 1 }       // Index for recipient lookup
+{ type: 1 }            // Index for notification types
+```
+
+## 4. Data Validation
+
+### Schema Validation Rules
+- Email format validation
+- Required fields checking
+- Enum value validation
+- Date format validation
+- Number range validation
+
+### Business Rules
+- CGPA must be between 0 and 10
+- Package values must be positive
+- Deadline dates must be future dates
+- Status transitions must follow defined workflow
+
+## 5. Data Security
+
+### Access Control
+- Role-based access control (RBAC)
+- Field-level encryption for sensitive data
+- Document-level access patterns
+
+### Data Privacy
+- Personally Identifiable Information (PII) protection
+- Data retention policies
+- Audit logging
+
+## 6. Performance Considerations
+
+### Optimization Strategies
+- Denormalization where appropriate
+- Efficient indexing
+- Caching frequently accessed data
+- Pagination for large result sets
+- Aggregation pipeline optimization
+
+### Scaling Considerations
+- Horizontal scaling capability
+- Sharding strategies
+- Read/Write operation patterns

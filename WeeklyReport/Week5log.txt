@@ -1,0 +1,8 @@
+Member 1(Mohamed Shakeel A):
+-Developed UI components to display job postings and company details.
+Member 2(Sangami G K):
+-Implemented the student profile page UI to show academic and placement details.
+Member 3(Rakshaya):
+-Integrated the job application submission API with frontend forms.
+Member 4(Hariprasath):
+-Conducted frontend testing and fixed UI inconsistencies.

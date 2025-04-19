@@ -1,0 +1,37 @@
+Worklog for Week 2
+Duration: 13.01.2025 to 18.01.2025
+Focus: Project Flow Analysis
+
+Team Contributions
+
+Task Breakdown:
+-Analyze the project requirements to create initial flow diagrams.
+-Develop drafts of Data Flow Diagrams (DFDs) and Entity-Relationship (ER) diagrams.
+-Push the drafts to the Git repository for version control and review.
+-Individual Contributions:
+
+Member 1(MOHAMED SHAKEEL A):
+-Drafted DFD, showing the overall system process flow and interactions between users and the system.
+-Defined the key data stores and processes required.
+
+Member 2(SANGAMI G K):
+-Created the initial ER diagram, identifying entities (e.gUsers, Companies, Applications) and relationships (e.g one-to-many between companies and applications).
+-Focused on ensuring all database relationships align with the project scope.
+
+Member 3(RAKSHAYA ):
+-Consolidated feedback from the team to improve diagram accuracy.
+-Pushed DFD and ER diagram drafts to the Git repository with detailed commit messages.
+
+Member 4(HARIPRASATH):
+-Conducted a review of the DFDs and ER diagram drafts.
+-Suggested improvements for better alignment with project objectives.
+
+Deliverables:
+-Data Flow Diagrams (DFDs): Initial drafts (Level 0 and Level 1) covering key system workflows.
+-ER Diagram: Identified primary entities, attributes, and relationships.
+-Git Repository: Updated with all diagrams and proper version tracking.
+
+Review Focus for the Week:
+-Logical and clear depiction of workflows in DFDs.
+-Proper alignment of ER diagrams with the database schema.
+-Constructive feedback and iterations to finalize diagrams for upcoming development stages.
